@@ -10,7 +10,7 @@ import org.springframework.web.bind.annotation.RestController
 @RequestMapping("/order")
 class OrderController {
     @PostMapping
-    fun create(@RequestBody products: List<ProductRequestDTO>): String  {
-        return "Hello world";
+    fun create(@RequestBody products: List<ProductRequestDTO>): String {
+        return "Hello world"
     }
 }
