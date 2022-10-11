@@ -1,0 +1,15 @@
+version: '3.5'
+services:
+  postgres:
+    container_name: db_order_container
+    image: postgres
+    environment:
+      POSTGRES_USER: order
+      POSTGRES_PASSWORD: order
+      PGDATA: /data/postgres
+    volumes:
+      - postgres:/data/postgres
+    ports:
+      - "5432:5432"
+volumes:
+  postgres:
