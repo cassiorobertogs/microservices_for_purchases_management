@@ -6,7 +6,7 @@ import javax.persistence.ManyToMany
 import javax.persistence.Table
 
 @Entity
-@Table(name = "product")
+@Table(name = "tbl_product")
 data class ProductTable(
     @Id
     val id:String,

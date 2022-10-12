@@ -9,7 +9,7 @@ import javax.persistence.ManyToMany
 import javax.persistence.Table
 
 @Entity
-@Table(name = "order")
+@Table(name = "tbl_order")
 data class OrderTable(
     @Id
     val id: String,
