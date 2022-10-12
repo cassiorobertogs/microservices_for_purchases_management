@@ -19,8 +19,8 @@ data class OrderTable(
     @ManyToMany
     @JoinTable(
         name = "order_product",
-        joinColumns = [JoinColumn(name = "order_id")],
-        inverseJoinColumns = [JoinColumn(name = "product_id")],
+        joinColumns = [JoinColumn(name = "tbl_order_id")],
+        inverseJoinColumns = [JoinColumn(name = "tbl_product_id")],
     )
     val products: List<ProductTable>
 
