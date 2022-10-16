@@ -6,7 +6,7 @@ import org.springframework.stereotype.Component
 
 @Component
 class ProductMock: ProductGateway {
-    override fun reserve(products: List<Product>): Boolean {
-        return true
+    override fun reserve(products: List<Product>): Double {
+        return 6.0
     }
 }

@@ -9,4 +9,8 @@ class OrderMock: OrderDatabaseGateway {
     override fun create(order: Order) {
         TODO("Not yet implemented")
     }
+
+    override fun update(order: Order) {
+        TODO("Not yet implemented")
+    }
 }
