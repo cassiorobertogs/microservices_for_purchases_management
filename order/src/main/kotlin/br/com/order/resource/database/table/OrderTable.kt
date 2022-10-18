@@ -1,5 +1,6 @@
 package br.com.order.resource.database.table
 
+import br.com.order.domain.entity.Order
 import br.com.order.domain.enum.OrderStatus
 import javax.persistence.Entity
 import javax.persistence.Id
@@ -24,4 +25,19 @@ data class OrderTable(
     )
     val products: List<ProductTable>
 
-)
+) {
+    companion object {
+        fun fromDomain(order: Order) = OrderTable(
+            id = order.id,
+            value = order.value,
+            status = order.status,
+            userId = order.userId,
+            products = order.products.map {
+                ProductTable(
+                    id = it.id,
+                    orders = listOf()
+                )
+            }
+        )
+    }
+}
