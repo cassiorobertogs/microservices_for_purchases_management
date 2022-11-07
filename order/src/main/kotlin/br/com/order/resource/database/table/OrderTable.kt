@@ -26,18 +26,24 @@ data class OrderTable(
     val products: List<ProductTable>
 
 ) {
-    companion object {
-        fun fromDomain(order: Order) = OrderTable(
-            id = order.id,
-            value = order.value,
-            status = order.status,
-            userId = order.userId,
-            products = order.products.map {
-                ProductTable(
-                    id = it.id,
-                    orders = listOf()
-                )
-            }
-        )
-    }
+    constructor(order: Order) : this(
+        id = order.id,
+        value = order.value,
+        status = order.status,
+        userId = order.userId,
+        products = listOf()
+        //products = order.products.map {
+            //ProductTable(
+//                id = it.id,
+//                orders = listOf()
+//            )
+//        }
+    )
+    constructor(): this(
+        id = "",
+        value = 0.0,
+        status = OrderStatus.CREATED,
+        userId = "",
+        products = listOf(),
+    )
 }

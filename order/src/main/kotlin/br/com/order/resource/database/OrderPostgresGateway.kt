@@ -11,10 +11,10 @@ class OrderPostgresGateway(
     private val repository: OrderPostgresRepository
 ): OrderDatabaseGateway {
     override fun create(order: Order) {
-        repository.save(OrderTable.fromDomain(order))
+        repository.save(OrderTable(order))
     }
 
     override fun update(order: Order) {
-        TODO("Not yet implemented")
+        repository.save(OrderTable(order))
     }
 }
