@@ -6,4 +6,8 @@ data class ProductRequestDTO(
         val id: String
 ) {
         fun toDomain() = Product(id = id)
+
+        constructor(product: Product): this(
+                id = product.id
+        )
 }
